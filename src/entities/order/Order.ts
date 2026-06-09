@@ -1,0 +1,13 @@
+import type { OrderItem } from "../ordem_item/order_item.js";
+
+export class Order {
+    _id: string;
+    _customerId: string;
+    _items: OrderItem[] = [];
+
+    constructor(id: string, customerId: string, items: OrderItem[]) {
+        this._id = id;
+        this._customerId = customerId;
+        this._items = items;
+    }
+}
