@@ -8,10 +8,15 @@ export class Customer {
 
 
     validate() {
-        if (this._id.length === 0) {
+        if (!this._id || this._id.trim().length === 0) {
             throw new Error("Id is required");
         }
-        if (this._name.length >= 3 && this._name.length <= 255) {
+    
+        if (!this._name || this._name.trim().length === 0) {
+            throw new Error("Name is required");
+        }
+    
+        if (this._name.length < 3 || this._name.length > 255) {
             throw new Error("Name must be between 3 and 255 characters");
         }
     }
@@ -26,6 +31,18 @@ export class Customer {
         this._address = address;
     }
 
-    activate() {}
-    deactivate() {}
+
+    changeName(name: string) {
+        this._name = name;
+        this.validate();
+    }
+    activate() {
+        if (this._address === undefined) {
+            throw new Error("Address is required");
+        }
+        this._active = true;
+    }
+    deactivate() {
+        this._active = false;
+    }
 }
