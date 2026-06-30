@@ -20,7 +20,7 @@ export class Order {
             throw new Error('Price must be greater than 0');
         }
         
-        return this._items.reduce((total, item) => total + item.getPrice(), 0);
+        return this._items.reduce((total, item) => total + item.getPrice() * item.getQuantity(), 0);
     }
 
     validate() {
