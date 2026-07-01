@@ -23,6 +23,10 @@ export class Order {
         return this._items.reduce((total, item) => total + item.getPrice() * item.getQuantity(), 0);
     }
 
+    totalItemsQuantity(): number {
+        return this._items.reduce((total, item) => total + item.getQuantity(), 0);
+    }
+
     validate() {
         if (this._items.length === 0) {
             throw new Error('Order must have at least one item');

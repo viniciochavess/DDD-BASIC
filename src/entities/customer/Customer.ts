@@ -5,6 +5,7 @@ export class Customer {
     _name: string;
     _active: boolean = false;
     _address?: Address;
+    private _rewardPoints: number = 0;
 
 
     validate() {
@@ -44,5 +45,12 @@ export class Customer {
     }
     deactivate() {
         this._active = false;
+    }
+    
+    addRewardPoints(points: number) {
+        this._rewardPoints += points;
+    }
+    get rewardPoints(): number {
+        return this._rewardPoints;
     }
 }

@@ -31,4 +31,15 @@ export class Product {
         }
         return true;
     }
+    changePrice(price: number) {
+        if(price <= 0) {
+            throw new Error("Price must be greater than 0");
+        }
+        this._price = price;
+        this.validate();
+    }
+
+    getPrice(): number {
+        return this._price;
+    }
 }
