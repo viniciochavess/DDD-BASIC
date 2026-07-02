@@ -1,7 +1,7 @@
-import { Customer } from "./entities/customer/Customer.js";
-import { Address } from "./entities/customer/VO/Address.js";
-import { OrderItem } from "./entities/ordem_item/order_item.js";
-import { Order } from "./entities/order/Order.js";
+import { Customer } from "./domain/entities/customer/Customer.js";
+import { Address } from "./domain/entities/customer/VO/Address.js";
+import { OrderItem } from "./domain/entities/ordem_item/order_item.js";
+import { Order } from "./domain/entities/order/Order.js";
 
 console.log("Hello World");
 

@@ -69,5 +69,20 @@ describe('Customer', () => {
         expect(() => customer.activate())
             .toThrow('Address is required');
     });
+    it('should be able to add reward points to customer', () => {
+        const customer = new Customer('1', 'John Doe');
+        customer.addRewardPoints(100);
+        customer.addRewardPoints(200);
+        expect(customer.rewardPoints).toBe(300);
+    });
+    it('should not be able to add negative reward points to customer', () => {
+        const customer = new Customer('1', 'John Doe');
+        expect(() => customer.addRewardPoints(-100))
+            .toThrow('Reward points must be greater than 0');
+    });
+    it('should be able to new customer with reward zero', () => {
+        const customer = new Customer('1', 'John Doe');
+        expect(customer.rewardPoints).toBe(0);
+    });
    
 });

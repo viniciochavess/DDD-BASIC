@@ -46,8 +46,11 @@ export class Customer {
     deactivate() {
         this._active = false;
     }
-    
+
     addRewardPoints(points: number) {
+        if (points < 0) {
+            throw new Error("Reward points must be greater than 0");
+        }
         this._rewardPoints += points;
     }
     get rewardPoints(): number {

@@ -1,8 +1,8 @@
 import { describe, expect, it } from '@jest/globals';
-import { OrderItem } from '../entities/ordem_item/order_item.js';
-import { Order } from '../entities/order/Order.js';
+import { OrderItem } from '../domain/entities/ordem_item/order_item.js';
+import { Order } from '../domain/entities/order/Order.js';
 import { OrderService } from './orderService.js';
-import { Customer } from '../entities/customer/Customer.js';
+import { Customer } from '../domain/entities/customer/Customer.js';
 
 describe('OrderService', () => {
     it("should place an order", () => {
