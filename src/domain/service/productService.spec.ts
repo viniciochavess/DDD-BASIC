@@ -1,6 +1,6 @@
 import { describe, expect, it } from '@jest/globals';
 import { ProductService } from './productService.js';
-import { Product } from '../domain/entities/product/product.js';
+import { Product } from '../entities/product/product.js';
 
 describe('ProductService', () => {
     it('should be able to increase the price of a product', () => {

@@ -1,6 +1,6 @@
-import type { Customer } from "../domain/entities/customer/Customer.js";
-import type { OrderItem } from "../domain/entities/ordem_item/order_item.js";
-import { Order } from "../domain/entities/order/Order.js";
+import type { Customer } from "../entities/customer/Customer.js";
+import type { OrderItem } from "../entities/ordem_item/order_item.js";
+import { Order } from "../entities/order/Order.js";
 import { randomUUID } from "node:crypto";
 
 export class OrderService {
