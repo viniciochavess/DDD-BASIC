@@ -42,4 +42,11 @@ export class Product {
     getPrice(): number {
         return this._price;
     }
+    getId(): string {
+        return this._id;
+    }
+    getName(): string {
+        return this._name;
+    }
+    
 }

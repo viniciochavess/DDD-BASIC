@@ -21,4 +21,8 @@ describe('Order', () => {
         const order = new Order('1', '1', [orderItem, orderItem2]);
         expect(order.total()).toBe(600);
     });
+    it('should not be product price less than 0', () => {
+        expect(() => new Order('1', '1', [new OrderItem('1', 'Item 1', -100, '1', 1)]))
+            .toThrow('Price must be greater than 0');
+    });
 });
